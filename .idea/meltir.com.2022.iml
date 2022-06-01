@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/symfony/stopwatch" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/symfony/doctrine-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/symfony/proxy-manager-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/persistence" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/migrations" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/event-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/doctrine-migrations-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/deprecations" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/friendsofphp/proxy-manager-lts" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/laminas/laminas-code" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/symfony/maker-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/nikic/php-parser" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="new-meltir.com" />
+  </component>
+</module>
