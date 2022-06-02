@@ -77,6 +77,9 @@
       <path value="$PROJECT_DIR$/www/vendor/symfony/security-bundle" />
       <path value="$PROJECT_DIR$/www/vendor/easycorp/easyadmin-bundle" />
       <path value="$PROJECT_DIR$/www/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/www/vendor/gedmo/doctrine-extensions" />
+      <path value="$PROJECT_DIR$/www/vendor/stof/doctrine-extensions-bundle" />
+      <path value="$PROJECT_DIR$/www/vendor/behat/transliterator" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

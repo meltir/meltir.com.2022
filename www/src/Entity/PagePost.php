@@ -6,6 +6,7 @@ use App\Repository\PagePostRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: PagePostRepository::class)]
 class PagePost
@@ -18,12 +19,14 @@ class PagePost
     #[ORM\Column(type: 'text')]
     private $body;
 
+    #[Gedmo\SortablePosition]
     #[ORM\Column(type: 'integer', nullable: true)]
     private $post_order;
 
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $active;
 
+    #[Gedmo\SortableGroup]
     #[ORM\Column(type: 'string', length: 255)]
     private $page;
 

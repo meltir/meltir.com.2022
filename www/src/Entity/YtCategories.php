@@ -6,6 +6,7 @@ use App\Repository\YtCategoriesRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 #[ORM\Entity(repositoryClass: YtCategoriesRepository::class)]
 class YtCategories
@@ -21,9 +22,11 @@ class YtCategories
     #[ORM\Column(type: 'boolean')]
     private $active;
 
+    #[Gedmo\Slug(fields: ['name','id'])]
     #[ORM\Column(type: 'string', length: 255)]
     private $slug;
 
+    #[Gedmo\SortablePosition]
     #[ORM\Column(type: 'integer')]
     private $cat_order;
 

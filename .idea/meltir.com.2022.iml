@@ -46,6 +46,9 @@
       <excludeFolder url="file://$MODULE_DIR$/www/vendor/symfony/security-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/www/vendor/easycorp/easyadmin-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/www/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/gedmo/doctrine-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/stof/doctrine-extensions-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/www/vendor/behat/transliterator" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
