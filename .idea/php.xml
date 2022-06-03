@@ -80,6 +80,10 @@
       <path value="$PROJECT_DIR$/www/vendor/gedmo/doctrine-extensions" />
       <path value="$PROJECT_DIR$/www/vendor/stof/doctrine-extensions-bundle" />
       <path value="$PROJECT_DIR$/www/vendor/behat/transliterator" />
+      <path value="$PROJECT_DIR$/www/vendor/symfony/web-profiler-bundle" />
+      <path value="$PROJECT_DIR$/www/vendor/symfony/monolog-bridge" />
+      <path value="$PROJECT_DIR$/www/vendor/symfony/monolog-bundle" />
+      <path value="$PROJECT_DIR$/www/vendor/monolog/monolog" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

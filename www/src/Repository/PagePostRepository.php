@@ -3,23 +3,18 @@
 namespace App\Repository;
 
 use App\Entity\PagePost;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
+use Gedmo\Sortable\Entity\Repository\SortableRepository;
 
 /**
- * @extends ServiceEntityRepository<PagePost>
+ * @extends SortableRepository<PagePost>
  *
  * @method PagePost|null find($id, $lockMode = null, $lockVersion = null)
  * @method PagePost|null findOneBy(array $criteria, array $orderBy = null)
  * @method PagePost[]    findAll()
  * @method PagePost[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PagePostRepository extends ServiceEntityRepository
+class PagePostRepository extends SortableRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, PagePost::class);
-    }
 
     public function add(PagePost $entity, bool $flush = false): void
     {
@@ -63,4 +58,13 @@ class PagePostRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function findForThisPage($page) {
+        return $this->getBySortableGroupsQueryBuilder(['page'=>$page])
+            ->andWhere('n.active = true')
+            ->andWhere('n.parent_post is null')
+            ->addOrderBy('n.id')
+            ->getQuery()
+            ->getResult();
+    }
 }

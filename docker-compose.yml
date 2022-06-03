@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 networks:
   my-net:
 volumes:
@@ -17,8 +17,10 @@ services:
     #command: [nginx-debug, '-g', 'daemon off;']
   php:
     image: meltir/php-fpm
-    build: 
-      context: ./php
+    build:
+      dockerfile: ./php/Dockerfile
+      context: .
+      target: symfony_dev
     tty: true
     volumes:
       - ./www:/var/www
@@ -38,8 +40,8 @@ services:
       - --port=3306
     ports:
       - '3306:3306'
-#    volumes:
-#      - "dbdata:/var/lib/mysql:cached"
+    volumes:
+      - "dbdata:/var/lib/mysql:cached"
     tty: true
     env_file:
       - www/.env
