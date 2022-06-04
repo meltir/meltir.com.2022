@@ -7,11 +7,14 @@ use App\Entity\YtCategories;
 use App\Entity\YtChannels;
 use App\Entity\YtVideos;
 use App\Repository\PagePostRepository;
+use App\Repository\YtVideosRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class HomeController extends AbstractController
 {
@@ -34,8 +37,21 @@ class HomeController extends AbstractController
         return $this->render('cv.html.twig',['posts'=>$posts]);
     }
 
+    #[Route(
+        '/youtube/channel/{chan_id}/{page?1}',
+        name: 'youtube_ajax',
+        methods: ['GET'],
+        condition: "request.isXmlHttpRequest()"
+    )]
+    public function next4videos(int $page, YtChannels $channel, YtVideosRepository $videosRepository): Response {
+        $videos = $videosRepository->getLatestVideosQuery($channel, 4, $page)->getArrayResult();
+        if (count($videos)==0) return new Response('no results :(');
+        return $this->json($videos);
+    }
+
+
     #[Route('/youtube/{slug?dev}/{page?1}', name: 'app_youtube', methods: ['GET'])]
-    public function youtube( YtCategories $category, ManagerRegistry $doctrine, int $page): Response {
+    public function youtube(YtCategories $category, ManagerRegistry $doctrine, int $page): Response {
         $per_page = 10;
         $categories = $doctrine
             ->getRepository(YtCategories::class)
@@ -63,4 +79,5 @@ class HomeController extends AbstractController
             'videos'=>$videos
         ]);
     }
+
 }

@@ -147,12 +147,12 @@
 				let button = $(this);
 				let chanid = button.attr('chanid');
 				let page = parseInt(button.attr('page'));
-				let url = '/youtube_channel_videos/' + chanid + '/' + page;
+				let url = '/youtube/channel/' + chanid + '/' + page;
+				// let url = '/youtube_channel_videos/' + chanid + '/' + page;
 				let prev_button = $("a[chanid='" + chanid +"'].videolist_prev");
 
 				if (page==0) return;
-				$.getJSON(url,function (response) {
-					let json = JSON.parse(response);
+				$.getJSON(url,function (json) {
 					let index = 0;
 					$('#videos_'+chanid+' section article').each(function() {
 						let item = json[index];
@@ -185,12 +185,11 @@
 			let button = $(this);
 			let chanid = button.attr('chanid');
 			let page = parseInt(button.attr('page'));
-			let url = '/youtube_channel_videos/' + chanid + '/' + page;
+			let url = '/youtube/channel/' + chanid + '/' + page;
 			let next_button = $("a[chanid='" + chanid +"'].videolist_next");
 
 			if (page==0) return;
-			$.getJSON(url,function (response) {
-				let json = JSON.parse(response);
+			$.getJSON(url,function (json) {
 				let index = 0;
 				next_button.attr('page',page+1);
 				next_button.removeClass('disabled');
