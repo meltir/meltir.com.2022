@@ -63,4 +63,12 @@ class YtCategoriesRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+
+    public function getActiveCategories() {
+        return $this->createQueryBuilder('n')
+            ->andWhere('n.active = true')
+            ->orderBy('n.cat_order')
+            ->getQuery()
+            ->getResult();
+    }
 }

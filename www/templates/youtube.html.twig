@@ -24,7 +24,7 @@
                 <p>So, I grouped them a bit. It has the side effect of making the logic slightly more interesting.</p>
                 <ul class="actions fit small">
                     {% for category in categories %}
-                        {% set route = path('youtube_list',{'category': category.slug}) %}
+                        {% set route = path('app_youtube',{'slug': category.slug}) %}
                         {% set current_cat = (category == current_category) ? true : false %}
                         <li><a {{ (not current_cat) ? 'href=' ~ route }} class="button fit small {{ current_cat ? 'primary' }}">{{ category.name }}</a></li>
                     {% endfor %}
@@ -59,6 +59,6 @@
         </section>
     {% endfor %}
     {% set style_id = style_id +1 %}
-    {{ include('solidstate/paginator.html.twig',{'page':paginator.page,'pages':paginator.pages,'base_route':paginator.base_route,'route_params':{'category':current_category.slug}}) }}
+    {{ include('solidstate/paginator.html.twig',{'page':paginator.page,'pages':paginator.pages,'base_route':paginator.base_route,'route_params':{'slug':current_category.slug}}) }}
     {% block pagination %}{% endblock %}
 {% endblock %}

@@ -2,8 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\YtChannels;
 use App\Entity\YtVideos;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Query;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
@@ -63,4 +65,19 @@ class YtVideosRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
+    /**
+     * @param YtChannels $channel
+     * @param int $count
+     * @param int $page
+     * @return Query
+     */
+    public function getLatestVideosQuery(YtChannels $channel, $count = 10, $page = 1) {
+        $query = $this->createQueryBuilder('n')
+            ->andWhere('n.channel = :chan')
+            ->setParameter('chan',$channel)
+            ->orderBy('n.date_published','DESC')
+            ->setMaxResults($count);
+        if ($page>1) $query->setFirstResult($page*$count);
+        return $query->getQuery();
+    }
 }
