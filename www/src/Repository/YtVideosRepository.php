@@ -71,7 +71,7 @@ class YtVideosRepository extends ServiceEntityRepository
      * @param int $page
      * @return Query
      */
-    public function getLatestVideosQuery(YtChannels $channel, $count = 10, $page = 1) {
+    public function getLatestVideosQuery(YtChannels $channel, int $count = 10, int $page = 1): Query {
         $query = $this->createQueryBuilder('n')
             ->andWhere('n.channel = :chan')
             ->setParameter('chan',$channel)

@@ -69,7 +69,7 @@ class YtChannelsRepository extends ServiceEntityRepository
      * @param YtChannels $channel
      * @return bool
      */
-    public function isChannelActive(YtChannels $channel) {
+    public function isChannelActive(YtChannels $channel): bool {
         if ($channel->getCategory()->getActive()) return true;
         return false;
     }
@@ -80,7 +80,8 @@ class YtChannelsRepository extends ServiceEntityRepository
      * @param YtCategories|null $category
      * @return YtChannels[]
      */
-    public function getChannelPage(int $page=1,int $per_page=10, YtCategories $category = null) {
+    public function getChannelPage(int $page=1,int $per_page=10, ?YtCategories $category): array
+    {
         $query = $this->createQueryBuilder('n')
             ->addOrderBy('n.category')
             ->join('n.category', 'c')
@@ -99,7 +100,7 @@ class YtChannelsRepository extends ServiceEntityRepository
      * @return int
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
-    public function countPages(int $per_page, YtCategories $category = null) {
+    public function countPages(int $per_page, ?YtCategories $category): int {
         $query = $this->createQueryBuilder('n')
             ->select('COUNT(n.id)')
             ->join('n.category', 'c')
@@ -117,7 +118,7 @@ class YtChannelsRepository extends ServiceEntityRepository
      * @param int $per_page
      * @return YtChannels[]
      */
-    public function findActiveChannels(int $startRow=0, int $per_page=0) {
+    public function findActiveChannels(int $startRow=0, int $per_page=0): array {
         $query = $this->createQueryBuilder('n')
             ->join('n.category','c')
             ->andWhere('c.active = true');

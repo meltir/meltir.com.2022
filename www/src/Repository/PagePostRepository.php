@@ -34,32 +34,11 @@ class PagePostRepository extends SortableRepository
         }
     }
 
-//    /**
-//     * @return PagePost[] Returns an array of PagePost objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('p.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?PagePost
-//    {
-//        return $this->createQueryBuilder('p')
-//            ->andWhere('p.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
-
-    public function findForThisPage($page) {
+    /**
+     * @param string $page
+     * @return PagePost[]
+     */
+    public function findForThisPage(string $page): array {
         return $this->getBySortableGroupsQueryBuilder(['page'=>$page])
             ->andWhere('n.active = true')
             ->andWhere('n.parent_post is null')
