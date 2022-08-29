@@ -1,0 +1,66 @@
+version: '3.4'
+networks:
+  my-net:
+volumes:
+  dbdata:
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    tty: true
+    volumes:
+      - .:/var/www
+      - ./.docker/nginx/conf.d:/etc/nginx/conf.d
+    networks:
+      - my-net
+    #command: [nginx-debug, '-g', 'daemon off;']
+  php:
+#    image: meltir/php-fpm
+    build:
+      context: .
+      dockerfile: .docker/php/Dockerfile
+      target: symfony_dev
+    tty: true
+    volumes:
+      - .:/var/www
+    networks:
+      - my-net
+    cap_add:
+      - SYS_PTRACE
+#  memcached:
+#    image: memcached:alpine
+#    tty: true
+#    networks:
+#      - my-net
+  mariadb:
+    image: mariadb:latest
+#    restart: always
+    command:
+      - --port=3306
+    ports:
+      - '3306:3306'
+    volumes:
+      - "dbdata:/var/lib/mysql:cached"
+    tty: true
+    env_file:
+      - .env
+    networks:
+      - my-net
+  adminer:
+    image: adminer
+#    restart: always
+    ports:
+      - "8081:8080"
+    networks:
+      - my-net
+#  memcacheadmin:
+#    image: meltir/memcacheadmin
+#    build:
+#      context: ./phpmemcachedadmin
+#    restart: always
+#    ports:
+#      - "8082:8082"
+#    networks:
+#      - my-net
+      
