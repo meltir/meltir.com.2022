@@ -15,7 +15,6 @@ use Gedmo\Sortable\Entity\Repository\SortableRepository;
  */
 class PagePostRepository extends SortableRepository
 {
-
     public function add(PagePost $entity, bool $flush = false): void
     {
         $this->getEntityManager()->persist($entity);
@@ -35,11 +34,11 @@ class PagePostRepository extends SortableRepository
     }
 
     /**
-     * @param string $page
      * @return PagePost[]
      */
-    public function findForThisPage(string $page): array {
-        return $this->getBySortableGroupsQueryBuilder(['page'=>$page])
+    public function findForThisPage(string $page): array
+    {
+        return $this->getBySortableGroupsQueryBuilder(['page' => $page])
             ->andWhere('n.active = true')
             ->andWhere('n.parent_post is null')
             ->addOrderBy('n.id')

@@ -22,7 +22,7 @@ class YtCategories
     #[ORM\Column(type: 'boolean')]
     private $active;
 
-    #[Gedmo\Slug(fields: ['name','id'])]
+    #[Gedmo\Slug(fields: ['name', 'id'])]
     #[ORM\Column(type: 'string', length: 255)]
     private $slug;
 

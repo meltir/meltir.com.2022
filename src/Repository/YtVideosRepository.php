@@ -65,19 +65,18 @@ class YtVideosRepository extends ServiceEntityRepository
 //            ->getOneOrNullResult()
 //        ;
 //    }
-    /**
-     * @param YtChannels $channel
-     * @param int $count
-     * @param int $page
-     * @return Query
-     */
-    public function getLatestVideosQuery(YtChannels $channel, int $count = 10, int $page = 1): Query {
+
+    public function getLatestVideosQuery(YtChannels $channel, int $count = 10, int $page = 1): Query
+    {
         $query = $this->createQueryBuilder('n')
             ->andWhere('n.channel = :chan')
-            ->setParameter('chan',$channel)
-            ->orderBy('n.date_published','DESC')
+            ->setParameter('chan', $channel)
+            ->orderBy('n.date_published', 'DESC')
             ->setMaxResults($count);
-        if ($page>1) $query->setFirstResult($page*$count);
+        if ($page > 1) {
+            $query->setFirstResult($page * $count);
+        }
+
         return $query->getQuery();
     }
 }
