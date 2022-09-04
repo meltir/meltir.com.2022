@@ -16,7 +16,6 @@ services:
       - my-net
     #command: [nginx-debug, '-g', 'daemon off;']
   php:
-#    image: meltir/php-fpm
     build:
       context: .
       dockerfile: .docker/php/Dockerfile
@@ -28,14 +27,9 @@ services:
       - my-net
     cap_add:
       - SYS_PTRACE
-#  memcached:
-#    image: memcached:alpine
-#    tty: true
-#    networks:
-#      - my-net
+
   mariadb:
     image: mariadb:latest
-#    restart: always
     command:
       - --port=3306
     ports:
@@ -49,11 +43,15 @@ services:
       - my-net
   adminer:
     image: adminer
-#    restart: always
     ports:
       - "8081:8080"
     networks:
       - my-net
+#  memcached:
+#    image: memcached:alpine
+#    tty: true
+#    networks:
+#      - my-net      -
 #  memcacheadmin:
 #    image: meltir/memcacheadmin
 #    build:
