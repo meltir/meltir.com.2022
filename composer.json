@@ -33,7 +33,8 @@
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
             "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/runtime": true,
+            "infection/extension-installer": true
         },
         "optimize-autoloader": true,
         "preferred-install": {
@@ -82,6 +83,7 @@
         }
     },
     "require-dev": {
+        "infection/infection": "^0.26.13",
         "symfony/maker-bundle": "^1.43",
         "symfony/stopwatch": "6.1.*",
         "symfony/web-profiler-bundle": "6.1.*"
