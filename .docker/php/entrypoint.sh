@@ -1,11 +1,9 @@
 #!/usr/bin/env sh
 
-php ./bin/console --no-interaction cache:warmup
-php ./bin/console --no-interaction doctrine:migrations:migrate
-
-# first arg is `-f` or `--some-option`
-if [ "${1#-}" != "$1" ]; then
-        php-fpm "$@"
+if [ $# -eq 0 ]; then
+    php ./bin/console --no-interaction cache:warmup
+    php ./bin/console --no-interaction doctrine:migrations:migrate
+    php-fpm
 fi
 
-php-fpm
+exec docker-php-entrypoint "$@"
