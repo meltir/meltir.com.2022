@@ -67,7 +67,9 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "cp .github/hooks/* .git/hooks/",
+            "chmod +x .git/hooks/*"
         ],
         "post-update-cmd": [
             "@auto-scripts"
@@ -83,6 +85,7 @@
         }
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.11",
         "infection/infection": "^0.26.13",
         "symfony/maker-bundle": "^1.43",
         "symfony/stopwatch": "6.1.*",
