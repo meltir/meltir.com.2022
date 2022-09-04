@@ -1,3 +1,5 @@
-<?php // dev.encrypt.public on Wed, 01 Jun 2022 10:37:09 +0000
+<?php
+
+// dev.encrypt.public on Wed, 01 Jun 2022 10:37:09 +0000
 
 return "\x14\x21\x27\x15I\xC5\xE0\xF0\x5C\xBFi7\x2A\x9E0\x20z\xB9\xCD\x3C\x2B\x10\xD4K\x9Ec\xEC\xF1wo\x88\x06";

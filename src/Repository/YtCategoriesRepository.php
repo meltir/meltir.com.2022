@@ -42,7 +42,8 @@ class YtCategoriesRepository extends ServiceEntityRepository
     /**
      * @return YtCategories[]
      */
-    public function getActiveCategories(): array {
+    public function getActiveCategories(): array
+    {
         return $this->createQueryBuilder('n')
             ->andWhere('n.active = true')
             ->orderBy('n.cat_order')

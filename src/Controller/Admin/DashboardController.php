@@ -63,7 +63,7 @@ class DashboardController extends AbstractDashboardController
             // by default, all backend URLs are generated as absolute URLs. If you
             // need to generate relative URLs instead, call this method
             ->generateRelativeUrls()
-            ;
+        ;
     }
 
     public function configureMenuItems(): iterable

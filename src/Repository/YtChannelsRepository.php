@@ -65,22 +65,19 @@ class YtChannelsRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-    /**
-     * @param YtChannels $channel
-     * @return bool
-     */
-    public function isChannelActive(YtChannels $channel): bool {
-        if ($channel->getCategory()->getActive()) return true;
+    public function isChannelActive(YtChannels $channel): bool
+    {
+        if ($channel->getCategory()->getActive()) {
+            return true;
+        }
+
         return false;
     }
 
     /**
-     * @param int $page
-     * @param int $per_page
-     * @param YtCategories|null $category
      * @return YtChannels[]
      */
-    public function getChannelPage(int $page=1,int $per_page=10, ?YtCategories $category): array
+    public function getChannelPage(int $page = 1, int $per_page = 10, ?YtCategories $category): array
     {
         $query = $this->createQueryBuilder('n')
             ->addOrderBy('n.category')
@@ -88,41 +85,46 @@ class YtChannelsRepository extends ServiceEntityRepository
             ->andWhere('c.active = true')
             ->setMaxResults($per_page)
             ->setFirstResult(1);
-        if ($page>1) $query->setFirstResult(($page-1)*$per_page+1);
-        if ($category) $query->andWhere('n.category = :cat')
-            ->setParameter('cat',$category);
+        if ($page > 1) {
+            $query->setFirstResult(($page - 1) * $per_page + 1);
+        }
+        if ($category) {
+            $query->andWhere('n.category = :cat')
+                ->setParameter('cat', $category);
+        }
+
         return $query->getQuery()->getResult();
     }
 
     /**
-     * @param int $per_page
-     * @param YtCategories|null $category
-     * @return int
      * @throws \Doctrine\ORM\NonUniqueResultException
      */
-    public function countPages(int $per_page, ?YtCategories $category): int {
+    public function countPages(int $per_page, ?YtCategories $category): int
+    {
         $query = $this->createQueryBuilder('n')
             ->select('COUNT(n.id)')
             ->join('n.category', 'c')
             ->andWhere('c.active = true');
-        if ($category) $query->andWhere('n.category = :cat')
-            ->setParameter('cat',$category);
+        if ($category) {
+            $query->andWhere('n.category = :cat')
+                ->setParameter('cat', $category);
+        }
         $full_count = $query
             ->getQuery()
             ->getSingleScalarResult();
-        return floor($full_count/$per_page);
+
+        return floor($full_count / $per_page);
     }
 
     /**
-     * @param int $startRow
-     * @param int $per_page
      * @return YtChannels[]
      */
-    public function findActiveChannels(int $startRow=0, int $per_page=0): array {
+    public function findActiveChannels(int $startRow = 0, int $per_page = 0): array
+    {
         $query = $this->createQueryBuilder('n')
-            ->join('n.category','c')
+            ->join('n.category', 'c')
             ->andWhere('c.active = true');
-        if ($startRow !=0 && $per_page!=0) {
+        if (0 != $startRow && 0 != $per_page) {
             $query->setFirstResult($startRow);
             $query->setMaxResults($per_page);
         }
@@ -131,5 +133,4 @@ class YtChannelsRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-
 }
