@@ -1,1 +1,9 @@
-*.php text eol=lf
+* text eol=lf
+*.otf binary
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
+*.jpg binary
+*.png binary
+*.ico binary
