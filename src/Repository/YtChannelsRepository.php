@@ -77,7 +77,7 @@ class YtChannelsRepository extends ServiceEntityRepository
     /**
      * @return YtChannels[]
      */
-    public function getChannelPage(int $page = 1, int $per_page = 10, ?YtCategories $category): array
+    public function getChannelPage(?YtCategories $category, int $page = 1, int $per_page = 10): array
     {
         $query = $this->createQueryBuilder('n')
             ->addOrderBy('n.category')
