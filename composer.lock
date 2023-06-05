@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "669d88ae08e8ba25d43396b5090142e1",
+    "content-hash": "3730d374058946d463e40f2aaf31d144",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3432,22 +3432,23 @@
         },
         {
             "name": "symfony/expression-language",
-            "version": "v6.1.6",
+            "version": "v6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/expression-language.git",
-                "reference": "d1538560c075007d3dfd1f8e3a05e43a5ff13fd6"
+                "reference": "6d560c4c80e7e328708efd923f93ad67e6a0c1c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/expression-language/zipball/d1538560c075007d3dfd1f8e3a05e43a5ff13fd6",
-                "reference": "d1538560c075007d3dfd1f8e3a05e43a5ff13fd6",
+                "url": "https://api.github.com/repos/symfony/expression-language/zipball/6d560c4c80e7e328708efd923f93ad67e6a0c1c0",
+                "reference": "6d560c4c80e7e328708efd923f93ad67e6a0c1c0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.1",
                 "symfony/cache": "^5.4|^6.0",
-                "symfony/service-contracts": "^1.1|^2|^3"
+                "symfony/deprecation-contracts": "^2.5|^3",
+                "symfony/service-contracts": "^2.5|^3"
             },
             "type": "library",
             "autoload": {
@@ -3475,7 +3476,7 @@
             "description": "Provides an engine that can compile and evaluate expressions",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/expression-language/tree/v6.1.6"
+                "source": "https://github.com/symfony/expression-language/tree/v6.3.0"
             },
             "funding": [
                 {
@@ -3491,7 +3492,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-10-07T08:04:03+00:00"
+            "time": "2023-04-28T16:05:33+00:00"
         },
         {
             "name": "symfony/filesystem",
