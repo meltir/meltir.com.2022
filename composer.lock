@@ -7409,16 +7409,16 @@
         },
         {
             "name": "fidry/cpu-core-counter",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theofidry/cpu-core-counter.git",
-                "reference": "85193c0b0cb5c47894b5eaec906e946f054e7077"
+                "reference": "f92996c4d5c1a696a6a970e20f7c4216200fcc42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theofidry/cpu-core-counter/zipball/85193c0b0cb5c47894b5eaec906e946f054e7077",
-                "reference": "85193c0b0cb5c47894b5eaec906e946f054e7077",
+                "url": "https://api.github.com/repos/theofidry/cpu-core-counter/zipball/f92996c4d5c1a696a6a970e20f7c4216200fcc42",
+                "reference": "f92996c4d5c1a696a6a970e20f7c4216200fcc42",
                 "shasum": ""
             },
             "require": {
@@ -7458,7 +7458,7 @@
             ],
             "support": {
                 "issues": "https://github.com/theofidry/cpu-core-counter/issues",
-                "source": "https://github.com/theofidry/cpu-core-counter/tree/1.0.0"
+                "source": "https://github.com/theofidry/cpu-core-counter/tree/1.1.0"
             },
             "funding": [
                 {
@@ -7466,20 +7466,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-09-17T21:38:23+00:00"
+            "time": "2024-02-07T09:43:46+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.49.0",
+            "version": "v3.50.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "8742f7aa6f72a399688b65e4f58992c2d4681fc2"
+                "reference": "dbea11dcb6d9a1f6c8d51c0e580ab4a8876f524c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/8742f7aa6f72a399688b65e4f58992c2d4681fc2",
-                "reference": "8742f7aa6f72a399688b65e4f58992c2d4681fc2",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/dbea11dcb6d9a1f6c8d51c0e580ab4a8876f524c",
+                "reference": "dbea11dcb6d9a1f6c8d51c0e580ab4a8876f524c",
                 "shasum": ""
             },
             "require": {
@@ -7489,7 +7489,7 @@
                 "ext-json": "*",
                 "ext-tokenizer": "*",
                 "php": "^7.4 || ^8.0",
-                "sebastian/diff": "^4.0 || ^5.0",
+                "sebastian/diff": "^4.0 || ^5.0 || ^6.0",
                 "symfony/console": "^5.4 || ^6.0 || ^7.0",
                 "symfony/event-dispatcher": "^5.4 || ^6.0 || ^7.0",
                 "symfony/filesystem": "^5.4 || ^6.0 || ^7.0",
@@ -7510,7 +7510,8 @@
                 "php-cs-fixer/accessible-object": "^1.1",
                 "php-cs-fixer/phpunit-constraint-isidenticalstring": "^1.4",
                 "php-cs-fixer/phpunit-constraint-xmlmatchesxsd": "^1.4",
-                "phpunit/phpunit": "^9.6 || ^10.5.5",
+                "phpunit/phpunit": "^9.6 || ^10.5.5 || ^11.0.2",
+                "symfony/var-dumper": "^5.4 || ^6.0 || ^7.0",
                 "symfony/yaml": "^5.4 || ^6.0 || ^7.0"
             },
             "suggest": {
@@ -7549,7 +7550,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.49.0"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.50.0"
             },
             "funding": [
                 {
@@ -7557,7 +7558,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-02T00:41:40+00:00"
+            "time": "2024-02-23T23:17:45+00:00"
         },
         {
             "name": "infection/abstract-testframework-adapter",
@@ -7738,16 +7739,16 @@
         },
         {
             "name": "infection/infection",
-            "version": "0.27.9",
+            "version": "0.27.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/infection/infection.git",
-                "reference": "61e6d0645b89104fbd660218d3408219ad7176b5"
+                "reference": "873cd3335774a114bef9ca93388e623bf362d820"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/infection/infection/zipball/61e6d0645b89104fbd660218d3408219ad7176b5",
-                "reference": "61e6d0645b89104fbd660218d3408219ad7176b5",
+                "url": "https://api.github.com/repos/infection/infection/zipball/873cd3335774a114bef9ca93388e623bf362d820",
+                "reference": "873cd3335774a114bef9ca93388e623bf362d820",
                 "shasum": ""
             },
             "require": {
@@ -7768,7 +7769,7 @@
                 "php": "^8.1",
                 "sanmai/later": "^0.1.1",
                 "sanmai/pipeline": "^5.1 || ^6",
-                "sebastian/diff": "^3.0.2 || ^4.0 || ^5.0",
+                "sebastian/diff": "^3.0.2 || ^4.0 || ^5.0 || ^6.0",
                 "symfony/console": "^5.4 || ^6.0 || ^7.0",
                 "symfony/filesystem": "^5.4 || ^6.0 || ^7.0",
                 "symfony/finder": "^5.4 || ^6.0 || ^7.0",
@@ -7854,7 +7855,7 @@
             ],
             "support": {
                 "issues": "https://github.com/infection/infection/issues",
-                "source": "https://github.com/infection/infection/tree/0.27.9"
+                "source": "https://github.com/infection/infection/tree/0.27.10"
             },
             "funding": [
                 {
@@ -7866,7 +7867,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2023-12-07T17:42:43+00:00"
+            "time": "2024-02-20T00:08:52+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
